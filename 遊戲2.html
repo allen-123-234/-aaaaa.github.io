@@ -11,14 +11,14 @@
   </head>
   <body>
     <div id="game">
-      <p>猜一個英文單字：</p>
+      <p>猜一個英文名子或稱呼：(yoyo、allen、dclin、momo、youtong、mama)</p>
       <input type="text" id="guess">
       <button id="submit">提交</button>
       <p id="result"></p>
     </div>
 
     <script>
-      const words = ['javascript', 'python', 'java', 'html', 'css'];
+      const words = ['yoyo', 'allen', 'dclin', 'momo', 'youtong', 'mama'];
       const target = words[Math.floor(Math.random() * words.length)];
       const submit = document.querySelector('#submit');
       const guess = document.querySelector('#guess');
@@ -34,3 +34,4 @@
     </script>
   </body>
 </html>
+
