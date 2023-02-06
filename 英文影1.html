@@ -1,12 +1,18 @@
-
-
 <video id="myPlayer" width="480" height="270" controls>
     <source src=".mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-<!DOCTYPE html>
+
 <html>
 <head>
+    
+   
+    <br>
+    <br>
+    <b><font size=5>爸爸教學</font></b><br>
+    9.35兆訂閱 &nbsp;
+    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;
+  
   <style>
     #訂閱按鈕 {
       background-color: rgb(255, 0, 13);
@@ -16,6 +22,7 @@
   </style>
 </head>
 <body>
+    
   <button id="訂閱按鈕">訂閱</button>
   
   <script>
@@ -40,10 +47,51 @@
       });
     });
   </script>
+ 
+  <br>
+  <p id="text">這是英文教學影片</p>
+  <button id="expandButton">更多訊息</button>
+ 
+
+<script>
+var expandButton = document.getElementById("expandButton");
+var text = document.getElementById("text");
+
+expandButton.addEventListener("click", function() {
+  if (text.innerHTML === "這是英文教學影片，補充:轉網址就到github") {
+    text.innerHTML = "這是英文教學影片";
+    expandButton.innerHTML = "更多訊息";
+  } else {
+    text.innerHTML = "這是英文教學影片，補充:轉網址就到github";
+    expandButton.innerHTML = "部分訊息";
+  }
+});
+
+  
+
+
+
+</script>
+<style>
+button {
+  background-color: #787e78;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+  </style>
 </body>
 </html>
-<br>
-<h3><b>爸爸教學</b></h3>
+
 
 
       
