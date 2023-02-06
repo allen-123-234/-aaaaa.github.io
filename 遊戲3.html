@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Click Counter</title>
+  </head>
+  <body>
+    <h1>Click Counter</h1>
+    <p>Click the button to increase the count:</p>
+    <button id="counter">0</button>
+
+    <script>
+      const counter = document.getElementById('counter');
+
+      counter.addEventListener('click', function() {
+        counter.textContent = parseInt(counter.textContent) + 1;
+      });
+    </script>
+  </body>
+</html>

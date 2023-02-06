@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        position: relative;
+      }
+      .marker {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+        border-radius: 25px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GPS 尋找遊戲</h1>
+    <div id="map">
+      <div id="marker" class="marker">X</div>
+    </div>
+    <p>
+      <button id="startBtn">開始遊戲</button>
+      <button id="resetBtn" disabled>重置</button>
+    </p>
+  </body>
+  <script>
+    const map = document.getElementById("map");
+    const marker = document.getElementById("marker");
+    const startBtn = document.getElementById("startBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    let x = Math.floor(Math.random() * 450);
+    let y = Math.floor(Math.random() * 450);
+    let distance = 0;
+
+    marker.style.left = x + "px";
+    marker.style.top = y + "px";
+
+    startBtn.addEventListener("click", function() {
+      startBtn.disabled = true;
+      resetBtn.disabled = false;
+
+      map.addEventListener("click", function(event) {
+        distance = calculateDistance(event.clientX, event.clientY, x, y);
+        if (distance < 50) {
+          alert("恭喜你獲得獎勵！");
+          resetBtn.disabled = true;
+        } else {
+          alert("距離紅色 X 還有 " + distance.toFixed(0) + " 像素");
+        }
+      });
+    });
+
+    resetBtn.addEventListener("click", function() {
+      x = Math.floor(Math.random() * 450);
+      y = Math.floor(Math.random() * 450);
+      marker.style.left = x + "px";
+      marker.style.top = y + "px";
+    });
+
+    function calculateDistance(x1, y1, x2, y2) {
+      return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    }
+  </script>
+</html>

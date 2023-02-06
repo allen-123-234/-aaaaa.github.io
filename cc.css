@@ -1,0 +1,15 @@
+.pink-blue-button {
+  width: 150px;
+  height: 200px;
+  background-color: pink;
+  color: rgb(218, 16, 16);
+  border: 2px solid blue;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 30px;
+  transition: all 0.1s;
+ }
+
+.pink-blue-button:active {
+  transform: translate(0, 5px);
+}

@@ -1,0 +1,49 @@
+
+
+<video id="myPlayer" width="480" height="270" controls>
+    <source src=".mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #訂閱按鈕 {
+      background-color: rgb(255, 0, 13);
+      color: white;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <button id="訂閱按鈕">訂閱</button>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var 按鈕 = document.getElementById("訂閱按鈕");
+      
+      if (localStorage.getItem("已訂閱") === "true") {
+        按鈕.innerHTML = "已訂閱";
+        按鈕.style.backgroundColor = "gray";
+      }
+      
+      按鈕.addEventListener("click", function() {
+        if (按鈕.innerHTML === "訂閱") {
+          按鈕.innerHTML = "已訂閱";
+          按鈕.style.backgroundColor = "gray";
+          localStorage.setItem("已訂閱", "true");
+        } else {
+          按鈕.innerHTML = "訂閱";
+          按鈕.style.backgroundColor = "red";
+          localStorage.setItem("已訂閱", "false");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+<br>
+<h3><b>爸爸教學</b></h3>
+
+
+      

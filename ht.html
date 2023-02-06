@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Login System</title>
+</head>
+<body>
+
+  <link rel="stylesheet" href="c.css">
+  
+  <form>
+    <h1>JavaScript Login System</h1>
+    <label for="username">帳號(用戶名):</label>
+    <input type="text" id="username" name="username">
+    <br><br>
+    <label for="password">密碼:</label>
+    <input type="password" id="password" name="password">
+    <br><br>
+    <button type="button" onclick="checkLogin()">登入</button>
+  </form>
+  <div id="error" style="display: none; color: red;"></div>
+  <script>
+    function checkLogin() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if (username === "allen" && password === "allen990728") {
+        var name = "John";
+        window.location.href = "index.html";
+      } else {
+        if (username === "yuki" && password === "yuki971113") {
+          var name = "John";
+          window.location.href = "index.html";
+      } else {
+        if (username === "dclin" && password === "dclin701207") {
+          var name = "John";
+          window.location.href = "index.html";
+      } else {
+        if (username === "mama" && password === "mama720129") {
+          var name = "John";
+          window.location.href = "index.html";
+      } else {
+        if (username === "yoyo" && password === "yoyo1080121") {
+          var name = "John";
+          window.location.href = "index.html";
+      } else {
+ 
+        document.getElementById("error").style.display = "block";
+        document.getElementById("error").innerHTML =  "登錄失敗，用戶名或密碼不正確";
+      }
+      }
+      }
+      }
+      }
+    }
+
+
+   
+  
+  </script>
+  
+</body>
+</html>

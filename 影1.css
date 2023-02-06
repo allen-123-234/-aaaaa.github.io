@@ -1,0 +1,36 @@
+video::-webkit-media-controls-play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: pink;
+    background-image: url(your-play-icon-url.png);
+    background-size: 40px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 10px 10px 5px grey;
+  }
+  
+  video::-moz-media-controls-play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: pink;
+    background-image: url(your-play-icon-url.png);
+    background-size: 40px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 10px 10px 5px grey;
+  }
+  
+  video::-ms-media-controls-play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: pink;
+    background-image: url(your-play-icon-url.png);
+    background-size: 40px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 10px 10px 5px grey;
+  }
+  

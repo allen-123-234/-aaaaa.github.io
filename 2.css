@@ -1,0 +1,9 @@
+.error {
+    display: none;
+    color: red;
+  }
+  
+  #username + .error, #password + .error {
+    display: block;
+  }
+  

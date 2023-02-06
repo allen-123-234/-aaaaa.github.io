@@ -1,0 +1,30 @@
+#chatbox {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    overflow: scroll;
+  }
+  
+  .chat {
+    display: flex;
+    margin: 10px 0;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .message {
+    margin-left: 10px;
+  }
+  
+  #chatform {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  #chatinput {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  

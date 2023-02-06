@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #game {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game">
+      <p>猜一個數字 (1-100)：</p>
+      <input type="number" id="guess">
+      <button id="submit">提交</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      const target = Math.floor(Math.random() * 100) + 1;
+      const submit = document.querySelector('#submit');
+      const guess = document.querySelector('#guess');
+      const result = document.querySelector('#result');
+
+      submit.addEventListener('click', function() {
+        if (guess.value == target) {
+          result.textContent = '答對了！';
+        } else if (guess.value < target) {
+          result.textContent = '太小了！';
+        } else {
+          result.textContent = '太大了！';
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+  
