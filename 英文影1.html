@@ -8,7 +8,7 @@
         <!-- messages will be displayed here -->
       </div>
       <div id="chat-input">
-        <input type="text" id="chat-name" placeholder="Your name">
+        <input type="text" id="chat-name" placeholder="Your name" value="<?php echo $_SESSION['username']; ?>">
         <input type="text" id="chat-message" placeholder="Type your message here">
         <button id="chat-submit">Submit</button>
         <button id="chat-clear">Clear Chat</button>
