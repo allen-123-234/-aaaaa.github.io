@@ -100,11 +100,11 @@ button:hover {
     <!-- messages will be displayed here -->
   </div>
   <div id="chat-input">
-    <input type="text" id="chat-name" value="林侑彤" disabled>
-    <input type="text" id="chat-message" placeholder="Type your message here">
-    <button id="chat-submit">Submit</button>
-    <button id="chat-clear">Clear Chat</button>
-    <input type="password" id="chat-password" placeholder="Password to clear chat">
+    <input type="text" id="chat-name" placeholder="你的名字">
+    <input type="text" id="chat-message" placeholder="訊息">
+    <button id="chat-submit">發送</button>
+    <button id="chat-clear">清除聊天</button>
+    <input type="password" id="chat-password" placeholder="清除聊天的密碼">
   </div>
 </div>
 
@@ -135,13 +135,13 @@ button:hover {
     deleteButton.addEventListener("click", function() {
       // Check if password is correct
       const password = prompt("Enter password to delete message");
-      if (password === "secret") {
+      if (password === "刪除") {
         chatHistory.removeChild(newMessage);
 
         // Save updated chat history to local storage
         localStorage.setItem("chatHistory", chatHistory.innerHTML);
       } else {
-        alert("Incorrect password!");
+        alert("密碼錯誤");
       }
     });
 
@@ -158,7 +158,7 @@ button:hover {
       // Save empty chat history to local storage
       localStorage.setItem("chatHistory", "");
     } else {
-      alert("Incorrect password!");
+      alert("密碼錯誤!");
     }
   });
 </script>
