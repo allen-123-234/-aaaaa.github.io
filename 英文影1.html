@@ -3,6 +3,172 @@
     <title>Chat Room</title>
   </head>
   <body>
+    
+<video id="myPlayer" width="480" height="270" controls>
+    <source src=".mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<html>
+<head>
+    
+   
+    <br>
+    <br>
+    <b><font size=5>爸爸教學</font></b><br>
+    9.35兆訂閱 &nbsp;
+    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;
+  
+  <style>
+    #訂閱按鈕 {
+      background-color: rgb(255, 0, 13);
+      color: white;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+    
+  <button id="訂閱按鈕">訂閱</button>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var 按鈕 = document.getElementById("訂閱按鈕");
+      
+      if (localStorage.getItem("已訂閱") === "true") {
+        按鈕.innerHTML = "已訂閱";
+        按鈕.style.backgroundColor = "gray";
+      }
+      
+      按鈕.addEventListener("click", function() {
+        if (按鈕.innerHTML === "訂閱") {
+          按鈕.innerHTML = "已訂閱";
+          按鈕.style.backgroundColor = "gray";
+          localStorage.setItem("已訂閱", "true");
+        } else {
+          按鈕.innerHTML = "訂閱";
+          按鈕.style.backgroundColor = "red";
+          localStorage.setItem("已訂閱", "false");
+        }
+      });
+    });
+  </script>
+ 
+  <br>
+  <p id="text">這是英文教學影片</p>
+  <button id="expandButton">更多訊息</button>
+ 
+
+<script>
+var expandButton = document.getElementById("expandButton");
+var text = document.getElementById("text");
+
+expandButton.addEventListener("click", function() {
+  if (text.innerHTML === "這是英文教學影片，補充:轉網址就到github") {
+    text.innerHTML = "這是英文教學影片";
+    expandButton.innerHTML = "更多訊息";
+  } else {
+    text.innerHTML = "這是英文教學影片，補充:轉網址就到github";
+    expandButton.innerHTML = "部分訊息";
+  }
+});
+
+  
+
+
+
+</script>
+<style>
+button {
+  background-color: #787e78;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+  </style>
+ <div id="chat-area">
+  <div id="chat-history">
+    <!-- messages will be displayed here -->
+  </div>
+  <div id="chat-input">
+    <input type="text" id="chat-name" value="林侑彤" disabled>
+    <input type="text" id="chat-message" placeholder="Type your message here">
+    <button id="chat-submit">Submit</button>
+    <button id="chat-clear">Clear Chat</button>
+    <input type="password" id="chat-password" placeholder="Password to clear chat">
+  </div>
+</div>
+
+<script>
+  const chatName = document.getElementById("chat-name");
+  const chatMessage = document.getElementById("chat-message");
+  const chatSubmit = document.getElementById("chat-submit");
+  const chatClear = document.getElementById("chat-clear");
+  const chatPassword = document.getElementById("chat-password");
+  const chatHistory = document.getElementById("chat-history");
+
+  // Load previous messages from local storage
+  chatHistory.innerHTML = localStorage.getItem("chatHistory") || "";
+
+  chatSubmit.addEventListener("click", function() {
+    const name = chatName.value;
+    const message = chatMessage.value;
+    const newMessage = document.createElement("p");
+    newMessage.innerHTML = `${name}: ${message}`;
+    chatHistory.appendChild(newMessage);
+    chatMessage.value = "";
+
+    // Add delete button to each message
+    const deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "Delete";
+    newMessage.appendChild(deleteButton);
+
+    deleteButton.addEventListener("click", function() {
+      // Check if password is correct
+      const password = prompt("Enter password to delete message");
+      if (password === "secret") {
+        chatHistory.removeChild(newMessage);
+
+        // Save updated chat history to local storage
+        localStorage.setItem("chatHistory", chatHistory.innerHTML);
+      } else {
+        alert("Incorrect password!");
+      }
+    });
+
+    // Save chat history to local storage
+    localStorage.setItem("chatHistory", chatHistory.innerHTML);
+  });
+
+  chatClear.addEventListener("click", function() {
+    // Check if password is correct
+    const password = chatPassword.value;
+    if (password === "secret") {
+      chatHistory.innerHTML = "";
+
+      // Save empty chat history to local storage
+      localStorage.setItem("chatHistory", "");
+    } else {
+      alert("Incorrect password!");
+    }
+  });
+</script>
+</body>
+
+</html>
+
+
+
+      
     <div id="chat-area">
       <div id="chat-history">
         <!-- messages will be displayed here -->
