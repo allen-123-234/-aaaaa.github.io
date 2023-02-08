@@ -1,6 +1,19 @@
 <html>
   <head>
-    <meta http-equiv="refresh" content="1">
+      <script>
+  function updateContent() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "new-content.html", true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        document.getElementById("target").innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send();
+  }
+  
+  setInterval(updateContent, 1000);
+</script>
     <title>Chat Room</title>
   </head>
   <body>
@@ -100,6 +113,8 @@ button:hover {
   <div id="chat-history">
     <!-- messages will be displayed here -->
   </div>
+   <div id="target">
+
   <div id="chat-input">
     <input type="text" id="chat-name" placeholder="你的名字">
     <input type="text" id="chat-message" placeholder="訊息">
@@ -163,7 +178,9 @@ button:hover {
     }
   });
 </script>
-</body>
+<
+   </body>
+  
 
 </html>
 
