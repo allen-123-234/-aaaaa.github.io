@@ -1,94 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gu爸爸學習平台</title>
-    <!-- css連結 -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JQuery連結 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- JS連結 -->
-    <script src="scipt.js"></script>
-
-    <!-- FontAwesome 連結 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Bootstrap 連結 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
-
+	<title>電影展示網頁</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
-
 <body>
+	<header>
+		<h1>武俠電影</h1>
+		<nav>
+			<ul>
+				<li><a href="#">首頁</a></li>
+				<li><a href="#">電影列表</a></li>
+				<li><a href="#">關於我們</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section class="movie">
+			<img src="movie_poster.jpg" alt="電影海報">
+			<h2>電影標題</h2>
+			<p>電影描述</p>
+			<video src="index.html" controls></video>
+		</section>
+	</main>
 
-    <div class="container-all">
-
-
-        <!-- 左邊 -->
-        <div class="container-left">
-            <!-- 導覽列 -->
-            <nav id="sidebar">
-
-                <!-- 展往/縮起來 按鈕 -->
-
-                <button type="button" id="collapse" class="collapse-btn">
-            <i class="fas fa-align-left"></i>
-        </button>
-
-
-                <!-- List 列表 -->
-                <ul class="list-unstyled">
-                    <p> gu學習平台1.01 </p>
-
-
-                    <li>
-                        <a href="index.html">首頁 <i class="fas fa-home"></i>  </a>
-                    </li>
-                    <li>
-                        <a href="c.html">影片專區<i class="fab fa-youtube"></i> </a>
-                    </li>
-                    <li>
-                       
-                        <a href="#">關於本學習平台<i class="fab fa-youtube"></i> </a>
-                      
-
-                    <li>
-                        <a href="遊戲選擇.html">遊戲作品 <i class="fas fa-briefcase"></i>  </a>
-                    </li>
-
-                </ul>
-
-
-            </nav>
-
-        </div>
-
-        <!-- 右邊 -->
-        <div class="container-right">
-            <div class="container-fluid">
-               
-<marquee>gu學習平台1.0版本</marquee>
-                <h1>歡迎來到 gu學習平台</h1>
-
-            </div>
-
-        </div>
-
-    </div>
-
+	<footer>
+		<p>版權所有 &copy; 2023</p>
+	</footer>
 </body>
-
 </html>
-
-
-
-
-
-
-
-

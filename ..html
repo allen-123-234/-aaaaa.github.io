@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Line Notify 範例</title>
+</head>
+<body>
+  <form>
+    <label for="message">請輸入訊息:</label>
+    <input type="text" id="message" name="message">
+    <button onclick="sendLineNotify()">送出</button>
+  </form>
+
+  <script>
+    function sendLineNotify() {
+      // 取得訊息輸入框中的文字
+      var message = document.getElementById("message").value;
+
+      // 使用 AJAX 發送 POST 請求到 Line Notify API
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://notify-api.line.me/api/notify");
+      xhr.setRequestHeader("Authorization", "Bearer WINAhiYAKRnfHzSQS1ZHAZ0P9mK8j4p5lcFehGXJwWD");
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.send("message=" + message);
+    }
+  </script>
+</body>
+</html>
