@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相簿選擇區</title>
+</head>
+<body>
+
+<h1>我的網頁相簿</h1>
+  <div id="gallery">
+    <img src="1.jpg" alt="圖片1">
+    <img src="S__5742630.jpg" alt="圖片2">
+    <img src="S__5742631.jpg" alt="圖片3">
+    <img src="S__5742632.jpg" alt="圖片4">
+    <img src="S__5742633.jpg" alt="圖片5">
+    <img src="S__5742634.jpg" alt="圖片1">
+    <img src="S__5742635.jpg" alt="圖片2">
+    <img src="S__5742636.jpg" alt="圖片3">
+    <img src="S__5742637.jpg" alt="圖片4">
+    <img src="S__5742638.jpg" alt="圖片5">
+    <img src="S__5742639.jpg" alt="圖片1">
+    <img src="S__5742641.jpg" alt="圖片2">
+    <img src="S__5742642.jpg" alt="圖片3">
+    <img src="S__5742643.jpg" alt="圖片4">
+    <img src="S__5742644.jpg" alt="圖片5">
+    <img src="S__5742645.jpg" alt="圖片1">
+    <img src="S__5742646.jpg" alt="圖片2">
+    <img src="S__5742647.jpg" alt="圖片3">
+    <img src="S__5742648.jpg" alt="圖片4">
+    <img src="S__5742649.jpg" alt="圖片5">
+    <img src="S__5742650.jpg" alt="圖片1">
+    <img src="S__5742652.jpg" alt="圖片2">
+    <img src="S__5742653.jpg" alt="圖片3">
+    <img src="S__5742654.jpg" alt="圖片4">
+    <img src="S__5742655.jpg" alt="圖片5">
+    <img src="S__5742656.jpg" alt="圖片1">
+    <img src="S__5742657.jpg"alt="圖片2">
+    <img src="S__5742658.jpg" alt="圖片3">
+    <img src="S__5742661.jpg" alt="圖片4">
+    <img src="S__5742663.jpg" alt="圖片5">
+    <img src="S__5742664.jpg" alt="圖片3">
+    <img src="S__5742665.jpg" alt="圖片4">
+    <img src="S__5742666.jpg" alt="圖片5">
+    <img src="S__5742667.jpg" alt="圖片1">
+    <img src="S__5742668.jpg "alt="圖片2">
+    <img src="S__5742669.jpg" alt="圖片3">
+    <img src="S__5742670.jpg" alt="圖片4">
+    <img src="S__5742671.jpg" alt="圖片5">
+    <img src="S__5742672.jpg" alt="圖片1">
+    <img src="S__5742674.jpg" alt="圖片2">
+    <img src="S__5742675.jpg" alt="圖片3">
+    <img src="S__5742676.jpg "alt="圖片4">
+    <img src="S__5742677.jpg" alt="圖片5">
+    <img src="S__5742678.jpg" alt="圖片1">
+    <img src="S__5742681.jpg" alt="圖片2">
+    <img src="S__5742683.jpg" alt="圖片3">
+    <img src="S__5742684.jpg" alt="圖片4">
+    <img src="S__5742685.jpg" alt="圖片5">
+    <img src="S__5742686.jpg" alt="圖片3">
+    <img src="S__5742687.jpg" alt="圖片4">
+    <img src="S__5742688.jpg" alt="圖片5">
+    <img src="S__5742689.jpg" alt="圖片1">
+    <img src="S__5742690.jpg" alt="圖片2">
+    <img src="S__5742691.jpg" alt="圖片3">
+    <img src="S__5742692.jpg" alt="圖片4">
+    <img src="S__5742694.jpg" alt="圖片5">
+    <img src="S__5742695.jpg" alt="圖片1">
+    <img src="S__5742697.jpg"alt="圖片2">
+    <img src="S__5742698.jpg" alt="圖片3">
+    <img src="S__5742699.jpg" alt="圖片4">
+    <img src="S__5742700.jpg" alt="圖片5">
+    
+  </div>
+  <script>// script.js
+    const images = document.querySelectorAll("#gallery img");
+    for (let i = 0; i < images.length; i++) {
+      images[i].addEventListener("click", function() {
+        const imageName = images[i].getAttribute("alt");
+        switch (imageName) {
+          case "圖片1":
+            window.location.href = "page1.html";
+            break;
+          case "圖片2":
+            window.location.href = "page2.html";
+            break;
+          case "圖片3":
+            window.location.href = "page3.html";
+            break;
+          case "圖片4":
+            window.location.href = "page4.html";
+            break;
+          case "圖片5":
+            window.location.href = "page5.html";
+            break;
+          default:
+            console.log("無法識別的圖片名稱");
+        }
+      });
+    }
+    
+    </script>
+  <style>/* style.css */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    #gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    #gallery img:hover {
+      transform: scale(1.1);
+    }
+    </style>
+
+
+</body>
+</html>
