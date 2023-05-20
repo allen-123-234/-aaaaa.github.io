@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>範例網頁程式編輯器</title>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <div id="preview"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.session.setMode("ace/mode/javascript");
+      editor.setValue(`function sayHello() {
+  alert("Hello, world!");
+}`);
+
+      editor.getSession().on("change", function () {
+        var preview = document.getElementById("preview");
+        try {
+          eval(editor.getValue());
+        } catch (e) {
+          preview.innerHTML = `<p style="color: red;">${e.message}</p>`;
+        }
+      });
+    </script>
+        <style>
+          #editor {
+            height: 500px;
+          }
+          
+          #preview {
+            border: 1px solid rgb(12, 8, 8);
+
+            
+            padding: 10px;
+            margin-top: 20px;
+          }
+        </style>
+        
+        <div id="editor"></div>
+        <div id="preview"></div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+        <script>
+          var editor = ace.edit("editor");
+          editor.setTheme("ace/theme/monokai");
+          editor.session.setMode("ace/mode/css");
+          editor.setValue(`body {
+      background-color: #f2f2f2;
+    }
+    
+    h1 {
+      color: red;
+    }`);
+    
+          editor.getSession().on("change", function () {
+            var preview = document.getElementById("preview");
+            preview.innerHTML = `<style>${editor.getValue()}</style>`;
+          });
+        </script>
+         <script>
+          var editor = ace.edit("editor");
+          editor.setTheme("ace/theme/monokai");
+          editor.session.setMode("ace/mode/html");
+          editor.setValue(`<!DOCTYPE html>
+    <html>
+      <head>
+        <title>範例網頁程式編輯器</title>
+      </head>
+      <body>
+        <h1>Hello, world!</h1>
+        <h2>this is for you noah!</h2>
+          <h3>allen很強 to</h3>
+      </body>
+    </html>`);
+    
+          editor.getSession().on("change", function () {
+            var preview = document.getElementById("preview");
+            preview.innerHTML = editor.getValue();
+          });
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
